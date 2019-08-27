@@ -44,8 +44,8 @@ public class A1Jedi {
 				String nameOfItem = scan.next();
 
 				int[] array = new int[2];
-				array[0] = 1;
-				array[1] = quantityOfItem;
+				array[0] = treeMap.get(nameOfItem)[0] + 1;
+				array[1] = treeMap.get(nameOfItem)[1] + quantityOfItem;
 				treeMap.put(nameOfItem, array);
 			}
 		}

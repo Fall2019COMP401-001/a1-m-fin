@@ -64,7 +64,7 @@ public class A1Adept {
 			//Find if customer has higher or lower total cost than previous customers
 			if (totalCustomerCost > highestTotalCost) {
 				highestTotalCost = totalCustomerCost;
-				biggestCustomer = firstName + lastName;
+				biggestCustomer = firstName + " " + lastName;
 			}
 			else if (totalCustomerCost < lowestTotalCost) {
 				lowestTotalCost = totalCustomerCost;
