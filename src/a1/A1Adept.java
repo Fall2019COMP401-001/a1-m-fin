@@ -66,7 +66,7 @@ public class A1Adept {
 				highestTotalCost = totalCustomerCost;
 				biggestCustomer = firstName + " " + lastName;
 			}
-			else if (totalCustomerCost < lowestTotalCost) {
+			if (totalCustomerCost < lowestTotalCost) {
 				lowestTotalCost = totalCustomerCost;
 				smallestCustomer = firstName + " " + lastName;
 			}
