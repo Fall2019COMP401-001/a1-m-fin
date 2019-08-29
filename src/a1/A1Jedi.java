@@ -1,10 +1,8 @@
 package a1;
 
 import java.util.Scanner;
-
 import java.util.TreeMap;
 import java.util.Map;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -53,14 +51,15 @@ public class A1Jedi {
 				//Add to # of customers who bought item, if it's not a duplicate
 				if (!customerList.contains(nameOfItem)) {
 					treeMap.get(nameOfItem)[0] += 1;
+					customerList.add(nameOfItem);
 				}
 
 				//Add quantity of item bought to map
 				treeMap.get(nameOfItem)[1] += quantityOfItem;
-
-				scan.close();
 			}
 		}
+
+		scan.close();
 
 		//Print items bought
 		for (Map.Entry<String, int[]> entry : treeMap.entrySet()) {
