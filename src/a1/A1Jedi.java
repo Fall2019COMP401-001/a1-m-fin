@@ -5,8 +5,11 @@ import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.Map;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class A1Jedi {
-	
+
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
@@ -24,6 +27,7 @@ public class A1Jedi {
 			scan.nextDouble();
 
 			int[] array = {0, 0};
+			//Name of item, {number of customers who bought item, number of item bought}
 			treeMap.put(name, array);
 		}
 
@@ -38,15 +42,23 @@ public class A1Jedi {
 			//Get number of items of customer
 			int numberOfItems = scan.nextInt();
 
+			//List keeps track of what items each customer has already bought
+			List<String> customerList = new ArrayList<String>();
+
 			//Add items stats to map
 			for (int j = 0; j < numberOfItems; j++) {
 				int quantityOfItem = scan.nextInt();
 				String nameOfItem = scan.next();
 
-				int[] array = new int[2];
-				array[0] = treeMap.get(nameOfItem)[0] + 1;
-				array[1] = treeMap.get(nameOfItem)[1] + quantityOfItem;
-				treeMap.put(nameOfItem, array);
+				//Add to # of customers who bought item, if it's not a duplicate
+				if (!customerList.contains(nameOfItem)) {
+					treeMap.get(nameOfItem)[0] += 1;
+				}
+
+				//Add quantity of item bought to map
+				treeMap.get(nameOfItem)[1] += quantityOfItem;
+
+				scan.close();
 			}
 		}
 
